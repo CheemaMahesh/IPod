@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: cyan;
+  display: flex;
+flex-direction: column;
+ justify-content: center; 
+align-items: center;
 }
 
 .App-logo {
@@ -35,4 +40,109 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.btnHome{
+  background-color: #282c34;
+  width:500px;
+  height: 100%;
+  display: flex;
+flex-direction: row;
+ justify-content: center; 
+align-items: center;
+}
+.btnHomeChild{
+  background-color: rgb(245, 240, 240);
+  background-color: green;
+  border-radius: 50%;
+  width:300px;
+}
+.btnHomeChild div{
+height:100px;
+display: flex;
+flex-direction: row;
+ justify-content: center; 
+align-items: center; 
+
+}
+.btnHomeChild div button{
+  height:100px;
+  width: 100px;
+  font-weight: bold;
+font-size: 1.5rem;
+border:0px;
+
+}
+
+.Ok{
+  height:100px;
+  width: 100px;
+  background-color: #282c34;
+  border-radius: 50%;
+}
+.bHC1 button img{
+  height:20px;
+  width:20px;
+}
+.Ok0{
+  border-top-left-radius: 1.6rem;
+  border-top-right-radius: 1.6rem;
+
+}
+.Ok1{
+  border-top-left-radius: 1.6rem;
+  border-bottom-left-radius: 1.6rem;
+}
+.Ok2{
+  border-top-right-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+}
+.Ok3{
+  border-bottom-left-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+
+}
+/* ==============================Display-Styling----------------======================== */
+.DHome{
+  margin-top: 50px;
+  height:300px;
+  width:500px;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: row;
+  
+}
+.DLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:250px;
+}
+.DRight{
+  background-image: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg");
+  width:250px;
+}
+.DOptions{
+  height:300px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+
+}
+.DOptions div{
+  height:50px;
+  /* background-color: cyan; */
+}
+
+.bgColor{
+  background-color: red;
+}
+
+/* ===================================================COVER-FLOW================================ */
+.CoverFlowRoot{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
