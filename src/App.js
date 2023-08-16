@@ -64,27 +64,36 @@ export default class App extends Component {
     }
   };
 
-  okHandler = () => {
-    if (this.state.menu && this.state.num >= 0 && this.state.num <= 3) {
-     
-      this.setState(()=>({
-        oks: true
-       
-      }));
-      this.displayHandler();
-     
-    }
-  };
+
+  
 
   isMMenuHandler=()=>{
     if(this.state.menu&&this.state.num===1){
-      console.log("=====================isMMenuHandler==================================",this.state.isMMenu);
-      this.setState(()=>({
-        isMMenu:true
-      }));
-      this.handleMusic();
-      // this.mnumInc();
+    
     }
+  }
+  mnumInc=()=>{
+    // console.log("mnumInc");
+      if (this.state.mnum === 2) {
+        console.log('Ekkuvaindi mnum Jubb jubbbbbbbbbbb');
+        this.setState({
+          mnum: -1,
+        });
+      }
+  
+      if (this.state.isMMenu) {
+        this.displayHandler();
+        this.setState((prevState) => ({
+          mnum: prevState.mnum + 1,
+        }));
+        console.log('mnumInc jub jubbbbbbbbbbbbbbbbbb',this.state.mnum);
+
+       
+      }
+
+
+
+
   }
 
   displayHandler = () => {
@@ -103,39 +112,23 @@ export default class App extends Component {
     }else if(this.state.num===1){
       this.isMMenuHandler();
       this.setState({
-        display: <Music />,
+        display: <Music mnum={this.state.mnum}/>,
       });
     }
   };
 
-  mnumInc=()=>{
-    // console.log("mnumInc");
-      if (this.state.mnum === 3) {
-        console.log('Ekkuvaindi mnum Jubb jubbbbbbbbbbb');
-        this.setState({
-          mnum: -1,
-        });
-      }
-  
-      if (this.state.isMMenu) {
-        console.log('mnumInc jub jubbbbbbbbbbbbbbbbbb');
-        this.setState((prevState) => ({
-          mnum: prevState.mnum + 1,
-        }));
-      }
 
-
-
-
-  }
 
   handleMusic=()=>{
     console.log("HandleMusic")
     if(this.state.isMMenu){
       console.log("HandleMusic False");
       this.setState(()=>({
-        numIncs:this.mnumInc
+        numIncs:this.mnumInc,
+
       }))
+     
+
     }else  if(!this.state.isMMenu){
       
       console.log("HandleMusic True");
@@ -146,12 +139,40 @@ export default class App extends Component {
     }
   }
 
+  okHandler = () => {
+    if (this.state.menu && this.state.num >= 0 && this.state.num <= 3) {
+  
+      if (this.state.num === 1) {
+        this.setState(
+          {
+            isMMenu: true,
+            oks: true
+          },
+          () => {
+            // The following code will be executed after the state has been updated
+            this.handleMusic();
+            this.displayHandler();
+          }
+        );
+      } else {
+        this.setState(
+          {
+            oks: true
+          },
+          () => {
+            // The following code will be executed after the state has been updated
+            this.displayHandler();
+          }
+        );
+      }
+  
+    }
+  };
+
   render() {
     const numIncs=this.state.numIncs;
     const display = this.state.display;
     // console.log('display==============', numIncs);
-    console.log("mnums================================--------------------------------------------------",this.state.mnum);
-
     return (
       <div className="App">
         <div className="AppDisplay">
