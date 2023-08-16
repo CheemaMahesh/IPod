@@ -102,9 +102,19 @@ border:0px;
   border-bottom-right-radius: 1.6rem;
 
 }
+.AppDisplay{
+  margin-top: 50px;
+  height:300px;
+  width:500px;
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /* ==============================Display-Styling----------------======================== */
 .DHome{
-  margin-top: 50px;
+  /* margin-top: 50px; */
   height:300px;
   width:500px;
   background-color: darkgray;
@@ -145,4 +155,47 @@ border:0px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+/* =======================================================Settings======================================== */
+.SettingsImgDiv, .GamesImgDiv{
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 1.2rem;
+}
+.SettingsImg{
+  height:60%;
+  width:60%;
+}
+/* ===================================================================GAMES============================================= */
+.GamesImg{
+
+  height:90%;
+  width:90%;
+
+}
+/* ===============================================================Music================================================== */
+.bgColorB{
+  background-color: blue;
+}
+.Music{
+  display: flex;
+  flex-direction: row;
+  height:500px;
+}
+.MLeft{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width:250px;
+}
+.MRight{
+  background-image: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg");
+  width:250px;
+  height:100%;
 }
