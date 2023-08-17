@@ -7,7 +7,7 @@ export default class Display extends Component{
         
         let bools=menu;
        const {num}=this.props;
-       console.log(num,"num in Display")
+    //    console.log(num,"num in Display")
         return(
             <>
           <div className="DHome">

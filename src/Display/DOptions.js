@@ -15,7 +15,7 @@ export default class DOptions extends Component {
         const {num}=this.props
         let count=num;
       
-        console.log(count, "num in DOptions")
+        // console.log(count, "num in DOptions")
 
         return (
             <div className="DOptions">

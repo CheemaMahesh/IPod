@@ -19,13 +19,14 @@ export default class App extends Component {
       display: null, // Initialize display with null
       isMMenu:false,
       menumans:null,
-      numIncs:null
+      numIncs:null,
+      numDecs:null
       
     };
   }
 
   menuman = () => {
-    console.log('haiiiiiiiiii in menuman');
+    // console.log('haiiiiiiiiii in menuman');
     this.setState({
       menu: true,
     });
@@ -34,14 +35,14 @@ export default class App extends Component {
 
   numInc = () => {
     if (this.state.num === 3) {
-      console.log('Ekkuvaindi');
+      // console.log('Ekkuvaindi');
       this.setState({
         num: -1,
       });
     }
 
     if (this.state.menu&&!this.state.isMMenu) {
-      console.log('numInc');
+      // console.log('numInc');
       this.setState((prevState) => ({
         num: prevState.num + 1,
       }));
@@ -50,14 +51,14 @@ export default class App extends Component {
 
   numDec = () => {
     if (this.state.num === -1) {
-      console.log('Thakkuvaindi');
+      // console.log('Thakkuvaindi');
       this.setState({
         num: 3,
       });
     }
 
-    if (this.state.menu && this.state.num > -1) {
-      console.log('numDec');
+    if (this.state.menu && this.state.num > -1&&!this.state.isMMenu) {
+      // console.log('numDec');
       this.setState((prevState) => ({
         num: prevState.num - 1,
       }));
@@ -74,27 +75,51 @@ export default class App extends Component {
   }
   mnumInc=()=>{
     // console.log("mnumInc");
-      if (this.state.mnum === 2) {
+      if (this.state.isMMenu &&this.state.mnum === 2) {
         console.log('Ekkuvaindi mnum Jubb jubbbbbbbbbbb');
         this.setState({
-          mnum: -1,
+          mnum: 0,
         });
+        this.displayHandler();
       }
   
-      if (this.state.isMMenu) {
-        this.displayHandler();
-        this.setState((prevState) => ({
-          mnum: prevState.mnum + 1,
-        }));
-        console.log('mnumInc jub jubbbbbbbbbbbbbbbbbb',this.state.mnum);
-
+      if (this.state.isMMenu &&this.state.mnum>=-1&& this.state.mnum<2) {
        
+        this.setState((prev) => ({
+          
+          mnum: prev.mnum + 1,
+        }));
+        // console.log('mnumInc jub jubbbbbbbbbbbbbbbbbb',this.state.mnum);
+
+        this.displayHandler();
       }
-
-
-
+      
+      // this.handleMusic();
 
   }
+
+  mnumDec = () => {
+    if (this.state.isMMenu && this.state.mnum === -1) {
+      console.log('mnum--------------------------------------------------Thakkuvaindi');
+      this.setState({
+        mnum: 2,
+      });
+      this.displayHandler();
+    }
+
+    if (this.state.isMMenu && this.state.mnum >-1) {
+     
+      this.setState((pr) => ({
+        mnum:pr.mnum - 1,
+      }));
+      this.displayHandler();
+      // console.log("mnumDec-------------------------------------------------------",this.state.mnum);
+
+    }
+    // this.handleMusic();
+  };
+
+
 
   displayHandler = () => {
     if (this.state.num === 0) {
@@ -110,10 +135,12 @@ export default class App extends Component {
         display: <Games />,
       });
     }else if(this.state.num===1){
-      this.isMMenuHandler();
+     
       this.setState({
         display: <Music mnum={this.state.mnum}/>,
       });
+      console.log(" display: <Music mnum={this.state.mnum}/>,");
+      this.handleMusic();
     }
   };
 
@@ -122,18 +149,20 @@ export default class App extends Component {
   handleMusic=()=>{
     console.log("HandleMusic")
     if(this.state.isMMenu){
-      console.log("HandleMusic False");
+      console.log("HandleMusic True");
       this.setState(()=>({
         numIncs:this.mnumInc,
+        numDecs:this.mnumDec
 
       }))
      
 
     }else  if(!this.state.isMMenu){
       
-      console.log("HandleMusic True");
+      console.log("HandleMusic False")
       this.setState(()=>({
-       numIncs:this.numInc
+       numIncs:this.numInc,
+       numDecs:this.numDec
       }))
 
     }
@@ -162,6 +191,7 @@ export default class App extends Component {
           () => {
             // The following code will be executed after the state has been updated
             this.displayHandler();
+            
           }
         );
       }
@@ -171,8 +201,10 @@ export default class App extends Component {
 
   render() {
     const numIncs=this.state.numIncs;
+    const numDecs=this.state.numDecs;
     const display = this.state.display;
-    // console.log('display==============', numIncs);
+    const mnum=this.state.mnum;
+    console.log('mnum==============', mnum);
     return (
       <div className="App">
         <div className="AppDisplay">
@@ -182,10 +214,17 @@ export default class App extends Component {
         <Buttons
           menuman={this.menuman}
           numIncs={numIncs}
-          numDec={this.numDec}
+          numDec={numDecs}
           ok={this.okHandler}
         />
       </div>
     );
+  }
+
+  componentDidUpdate(){
+    console.log("this is in component did update--------==--=-=-=-=-=-=-=-",this.state.mnum);
+
+     
+
   }
 }
