@@ -59,7 +59,7 @@ export default class App extends Component {
     }
 
     if (this.state.menu && this.state.num > -1&&!this.state.isMMenu) {
-      // console.log('numDec');
+     
       this.setState((prevState) => ({
         num: prevState.num - 1,
       }));
@@ -69,13 +69,8 @@ export default class App extends Component {
 
   
 
-  isMMenuHandler=()=>{
-    if(this.state.menu&&this.state.num===1){
-    
-    }
-  }
+ //to change the Music options selection Down
   mnumInc=()=>{
-    // console.log("mnumInc");
       if (this.state.isMMenu &&this.state.mnum === 2) {
         console.log('Ekkuvaindi mnum Jubb jubbbbbbbbbbb');
         this.setState({
@@ -90,14 +85,14 @@ export default class App extends Component {
           
           mnum: prev.mnum + 1,
         }));
-        // console.log('mnumInc jub jubbbbbbbbbbbbbbbbbb',this.state.mnum);
 
         this.displayHandler();
       }
       
-      // this.handleMusic();
 
   }
+
+   //to change the Music options selection Up
 
   mnumDec = () => {
     if (this.state.isMMenu && this.state.mnum === -1) {
@@ -114,10 +109,8 @@ export default class App extends Component {
         mnum:pr.mnum - 1,
       }));
       this.displayHandler();
-      // console.log("mnumDec-------------------------------------------------------",this.state.mnum);
 
     }
-    // this.handleMusic();
   };
 
 
@@ -179,7 +172,6 @@ export default class App extends Component {
             oks: true
           },
           () => {
-            // The following code will be executed after the state has been updated
             this.handleMusic();
             this.displayHandler();
           }
@@ -190,7 +182,6 @@ export default class App extends Component {
             oks: true
           },
           () => {
-            // The following code will be executed after the state has been updated
             this.displayHandler();
             
           }
@@ -200,12 +191,12 @@ export default class App extends Component {
     }
   };
 
+
+  // Render function
   render() {
     const numIncs=this.state.numIncs;
     const numDecs=this.state.numDecs;
     const display = this.state.display;
-    // const mnum=this.state.mnum;
-    console.log('==============', this.state.count);
     return (
       <div className="App">
         <div className="AppDisplay">
