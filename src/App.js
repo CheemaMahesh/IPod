@@ -72,7 +72,6 @@ export default class App extends Component {
  //to change the Music options selection Down
   mnumInc=()=>{
       if (this.state.isMMenu &&this.state.mnum === 2) {
-        console.log('Ekkuvaindi mnum Jubb jubbbbbbbbbbb');
         this.setState({
           mnum: 0,
         });
@@ -96,7 +95,6 @@ export default class App extends Component {
 
   mnumDec = () => {
     if (this.state.isMMenu && this.state.mnum === -1) {
-      console.log('mnum--------------------------------------------------Thakkuvaindi');
       this.setState({
         mnum: 2,
       });
@@ -133,7 +131,6 @@ export default class App extends Component {
       this.setState({
         display: <Music mnum={this.state.mnum}/>,
       });
-      console.log(" display: <Music mnum={this.state.mnum}/>,");
       this.handleMusic();
     }
   };
@@ -141,9 +138,7 @@ export default class App extends Component {
 
 
   handleMusic=()=>{
-    console.log("HandleMusic")
     if(this.state.isMMenu){
-      console.log("HandleMusic True");
       this.setState(()=>({
         numIncs:this.mnumInc,
         numDecs:this.mnumDec
@@ -153,7 +148,6 @@ export default class App extends Component {
 
     }else  if(!this.state.isMMenu){
       
-      console.log("HandleMusic False")
       this.setState(()=>({
        numIncs:this.numInc,
        numDecs:this.numDec
