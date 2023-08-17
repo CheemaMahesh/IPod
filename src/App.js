@@ -12,7 +12,7 @@ export default class App extends Component {
     super();
     this.state = {
       menu: false,
-      count: 0,
+      count: 2,
       num: -1,
       mnum:-1,
       oks: false,
@@ -29,6 +29,7 @@ export default class App extends Component {
     // console.log('haiiiiiiiiii in menuman');
     this.setState({
       menu: true,
+      count:this.state.count+1
     });
     this.handleMusic();
   };
@@ -203,12 +204,12 @@ export default class App extends Component {
     const numIncs=this.state.numIncs;
     const numDecs=this.state.numDecs;
     const display = this.state.display;
-    const mnum=this.state.mnum;
-    console.log('mnum==============', mnum);
+    // const mnum=this.state.mnum;
+    console.log('==============', this.state.count);
     return (
       <div className="App">
         <div className="AppDisplay">
-          {this.state.oks ? display : <Display menu={this.state.menu} num={this.state.num} />}
+          {this.state.oks ? display : <Display menu={this.state.menu} num={this.state.num} count={this.state.count}/>}
         </div>
 
         <Buttons

@@ -6,7 +6,7 @@ export default class Music extends Component{
     constructor(){
         super();
         this.state={
-            musicList:["All Songs","Artists","Songs"],
+            musicList:["AllSongs","Artists","Albums"],
             
         }
     }
