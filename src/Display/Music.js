@@ -12,9 +12,7 @@ export default class Music extends Component{
     }
     render(){
         const { mnum } = this.props;
-  console.log("Received mnum prop in Music:", mnum);
 
-        // let count=mnum;
 
         return(
             <div className="Music">

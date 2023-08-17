@@ -26,7 +26,6 @@ export default class App extends Component {
   }
 
   menuman = () => {
-    // console.log('haiiiiiiiiii in menuman');
     this.setState({
       menu: true,
       count:this.state.count+1
@@ -34,25 +33,26 @@ export default class App extends Component {
     this.handleMusic();
   };
 
+  //to change the Menu options selection Down
   numInc = () => {
     if (this.state.num === 3) {
-      // console.log('Ekkuvaindi');
       this.setState({
         num: -1,
       });
     }
 
     if (this.state.menu&&!this.state.isMMenu) {
-      // console.log('numInc');
+      
       this.setState((prevState) => ({
         num: prevState.num + 1,
       }));
     }
   };
 
+  //to change the Menu options selection Up
   numDec = () => {
     if (this.state.num === -1) {
-      // console.log('Thakkuvaindi');
+    
       this.setState({
         num: 3,
       });
