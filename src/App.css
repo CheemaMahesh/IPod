@@ -5,7 +5,9 @@
 flex-direction: column;
  justify-content: center; 
 align-items: center;
+/* box-shadow: 2px 2px 4px rgba(233, 56, 56, 0.2); */
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -42,18 +44,24 @@ align-items: center;
   }
 }
 
+/* =======================================================================Button-Styling=========================================== */
+
 .btnHome{
   background-color: #282c34;
-  width:500px;
+  width:400px;
   height: 100%;
   display: flex;
 flex-direction: row;
  justify-content: center; 
 align-items: center;
+border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 12px 12px 14px rgba(165, 15, 15, 0.2);
+
 }
 .btnHomeChild{
   background-color: rgb(245, 240, 240);
-  background-color: green;
+  /* background-color: rgb(174, 179, 174); */
   border-radius: 50%;
   width:300px;
 }
@@ -105,22 +113,26 @@ border:0px;
 .AppDisplay{
   margin-top: 50px;
   height:300px;
-  width:500px;
+  width:400px;
   background-color: bisque;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  box-shadow: 12px 12px 14px rgba(233, 56, 56, 0.2);
 }
 /* ==============================Display-Styling----------------======================== */
 .DHome{
   /* margin-top: 50px; */
   height:300px;
-  width:500px;
-  background-color: darkgray;
+  width:400px;
+  background-color: rgb(248, 243, 243);
   display: flex;
   flex-direction: row;
-  
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 .DLeft{
   display: flex;
@@ -132,12 +144,14 @@ border:0px;
 .DRight{
   background-image: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg");
   width:250px;
+  border-top-right-radius: 1rem;
 }
 .DOptions{
   height:300px;
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
+  margin-left: 15px;
+ 
 
 }
 .DOptions div{
@@ -146,7 +160,13 @@ border:0px;
 }
 
 .bgColor{
-  background-color: red;
+  background-color: rgb(117, 108, 108);
+  border-radius: 2rem;
+  width:180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ===================================================COVER-FLOW================================ */
@@ -166,6 +186,8 @@ border:0px;
   align-items: center;
   background-color: white;
   font-size: 1.2rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 .SettingsImg{
   height:60%;
@@ -181,6 +203,14 @@ border:0px;
 /* ===============================================================Music================================================== */
 .bgColorB{
   background-color: blue;
+  /* background-color: rgb(117, 108, 108); */
+  border-radius: 2rem;
+  width:160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:40px;
 }
 .Music{
   display: flex;
@@ -192,10 +222,19 @@ border:0px;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  width:250px;
+  width:180px;
+  margin-left: 20px;
 }
 .MRight{
   background-image: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg");
-  width:250px;
+  width:200px;
   height:100%;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+/* ============================= */
+.Middle{
+  height:10px;
+  width:400px;
+  background-image: linear-gradient(rgb(248, 243, 243), #282c34 );
 }

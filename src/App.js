@@ -196,7 +196,7 @@ export default class App extends Component {
         <div className="AppDisplay">
           {this.state.oks ? display : <Display menu={this.state.menu} num={this.state.num} count={this.state.count}/>}
         </div>
-
+        <div className="Middle"></div>
         <Buttons
           menuman={this.menuman}
           numIncs={numIncs}
